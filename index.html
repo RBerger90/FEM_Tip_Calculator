@@ -1,44 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Tip calculator app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Frontend Mentor | Tip calculator app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
 
-  Bill
+<img src="images/logo.svg" alt="splitter logo">
+<main>
+    <div id="user-input">
+        <div id="bill">
+            <label for="bill-input" class="section-title">Bill</label>
+            <input type="text" class="text-input text-input-value" id="bill-input" value="0">
+        </div>
+        <div id="percentage">
+            <label for="percentage-input" class="section-title">Select Tip %</label>
+            <div id="percentage-input">
+                <label>
+                    <input type="button" class="btn-perc" value="5%">
+                </label>
+                <label>
+                    <input type="button" class="btn-perc" value="10%">
+                </label>
+                <label>
+                    <input type="button" class="btn-perc" value="15%">
+                </label>
+                <label>
+                    <input type="button" class="btn-perc" value="25%">
+                </label>
+                <label>
+                    <input type="button" class="btn-perc" value="50%">
+                </label>
+                <label>
+                    <input type="text" class="text-input" value="Custom">
+                </label>
+            </div>
+        </div>
+        <div id="nb-of-people">
+            <label for="nb-ppl-input" class="section-title">Number of People</label>
+            <input type="text" class="text-input text-input-value" id="nb-ppl-input" value="0">
+        </div>
+    </div>
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+    <div id="results">
+        <div class="print-result">
+            <p class="category">Tip Amount</p>
+            <p class="ratio">/ person</p>
+            <p class="value"></p>
+        </div>
+        <div class="print-result">
+            <p class="category">Total</p>
+            <p class="ratio">/ person</p>
+            <p class="value"></p>
+        </div>
+        <label>
+            <input type="button" value="RESET">
+        </label>
+    </div>
+</main>
 
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
 </body>
 </html>

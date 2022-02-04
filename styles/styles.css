@@ -1,0 +1,91 @@
+body {
+  font-family: "Space Mono", monospace;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  font-size: 14px;
+  background-color: #c5e4e7;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body main {
+  margin-top: 70px;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  width: 920px;
+  height: 480px;
+  padding: 30px;
+  box-sizing: border-box;
+  justify-content: space-between;
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.14);
+}
+body main #user-input {
+  flex: 1;
+  height: 420px;
+  max-width: 415px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 20px;
+  box-sizing: border-box;
+}
+body main #user-input #bill, body main #user-input #percentage {
+  margin-bottom: 45px;
+}
+body main #user-input #percentage-input {
+  display: grid;
+  grid-template-columns: repeat(3, 116px);
+  grid-gap: 16px;
+  grid-template-rows: repeat(2, 50px);
+  margin-top: 18px;
+}
+body main #user-input #percentage-input input {
+  width: 100%;
+  height: 100%;
+}
+body main #user-input #percentage-input input.btn-perc {
+  background-color: #00494d;
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: "Space Mono", monospace;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+body main #user-input .section-title {
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "Space Mono", monospace;
+  color: #5e7a7d;
+}
+body main #user-input .text-input {
+  margin: 0;
+  padding: 0 18px 0 0;
+  border: none;
+  box-sizing: border-box;
+  background-color: #f4fafa;
+  border-radius: 10px;
+  text-align: right;
+  font-size: 24px;
+  font-weight: 700;
+  font-family: "Space Mono", monospace;
+  color: #5e7a7d;
+}
+body main #user-input .text-input-value {
+  width: 100%;
+  margin-top: 10px;
+}
+body main #results {
+  flex: 1;
+  height: 420px;
+  max-width: 415px;
+  background-color: #00494d;
+  border-radius: 20px;
+}
+
+/*# sourceMappingURL=styles.css.map */

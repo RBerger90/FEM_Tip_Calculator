@@ -1,0 +1,117 @@
+$VDarkCyan : hsl(183, 100%, 15%);
+$StrongCyan: hsl(172, 67%, 45%);
+$LowDarkCyan: hsl(186, 14%, 43%);
+$DarkCyan: hsl(184, 14%, 56%);
+$LowLightCyan: hsl(185, 41%, 84%);
+$LightCyan: hsl(189, 41%, 97%);
+
+body{
+    font-family: 'Space Mono', monospace;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    font-size: 14px;
+    background-color: $LowLightCyan;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    main{
+        margin-top: 70px;
+        background-color: white;
+        border-radius: 20px;
+        display: flex;
+        width: 920px;
+        height: 480px;
+        padding: 30px;
+        box-sizing: border-box;
+        justify-content: space-between;
+        box-shadow: 0 30px  50px hsla(0, 0%, 0%, 0.14);
+
+
+        #user-input{
+            flex: 1;
+            height: 420px;
+            max-width: 415px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            padding: 20px;
+            box-sizing: border-box;
+
+            #bill,#percentage{
+                margin-bottom: 45px;
+            }
+
+            #percentage-input {
+                display: grid;
+                grid-template-columns: repeat(3, 116px);
+                grid-gap: 16px;
+                grid-template-rows: repeat(2, 50px);
+                margin-top: 18px;
+
+
+                input{
+                    width: 100%;
+                    height: 100%;
+                }
+
+                input.btn-perc{
+                    background-color: $VDarkCyan;
+                    border-radius: 10px;
+                    font-size: 24px;
+                    font-weight: 700;
+                    font-family: 'Space Mono', monospace;
+                    border: none;
+                    cursor: pointer;
+                    color: white;
+                }
+
+                input[type="text"]{
+
+                }
+            }
+
+            .section-title{
+                font-size: 16px;
+                font-weight: 700;
+                font-family: 'Space Mono', monospace;
+                color: $LowDarkCyan;
+            }
+
+            .text-input{
+                margin: 0;
+                padding: 0 18px 0 0;
+                border: none;
+                box-sizing: border-box;
+                background-color: $LightCyan;
+                border-radius: 10px;
+                text-align: right;
+                font-size: 24px;
+                font-weight: 700;
+                font-family: 'Space Mono', monospace;
+                color: $LowDarkCyan;
+            }
+
+            .text-input-value{
+                width: 100%;
+                margin-top: 10px;
+            }
+
+        }
+
+
+
+
+
+        #results{
+            flex: 1;
+            height: 420px;
+            max-width: 415px;
+            background-color: $VDarkCyan;
+            border-radius: 20px;
+        }
+    }
+}
