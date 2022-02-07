@@ -19,54 +19,67 @@
 <main>
     <div id="user-input">
         <div id="bill">
-            <label for="bill-input" class="section-title">Bill</label>
-            <input type="text" class="text-input text-input-value" id="bill-input" value="0">
+            <label class="section-title" id="bill-label">
+                Bill
+                <input type="number" min="0" class="text-input text-input-value" id="bill-input" placeholder="0" oninput="newBill(value)">
+            </label>
         </div>
         <div id="percentage">
             <label for="percentage-input" class="section-title">Select Tip %</label>
             <div id="percentage-input">
                 <label>
-                    <input type="button" class="btn-perc" value="5%">
+                    <input type="button" class="btn-perc" id="btn-5" value="5%" onclick="percSelec(5)">
                 </label>
                 <label>
-                    <input type="button" class="btn-perc" value="10%">
+                    <input type="button" class="btn-perc" id="btn-10" value="10%" onclick="percSelec(10)">
                 </label>
                 <label>
-                    <input type="button" class="btn-perc" value="15%">
+                    <input type="button" class="btn-perc" id="btn-15" value="15%" onclick="percSelec(15)">
                 </label>
                 <label>
-                    <input type="button" class="btn-perc" value="25%">
+                    <input type="button" class="btn-perc" id="btn-25" value="25%" onclick="percSelec(25)">
                 </label>
                 <label>
-                    <input type="button" class="btn-perc" value="50%">
+                    <input type="button" class="btn-perc" id="btn-50" value="50%" onclick="percSelec(50)">
                 </label>
                 <label>
-                    <input type="text" class="text-input" value="Custom">
+                    <input type="number" class="text-input" id="btn-ctm" placeholder="Custom" oninput="percSelec(value)" onclick="selectCustom()" min="0" max="100">
                 </label>
             </div>
         </div>
         <div id="nb-of-people">
-            <label for="nb-ppl-input" class="section-title">Number of People</label>
-            <input type="text" class="text-input text-input-value" id="nb-ppl-input" value="0">
+            <label class="section-title" id="ppl-label">Number of People
+                <input type="number" min="0" class="text-input text-input-value" id="nb-ppl-input" placeholder="0" oninput="newPplNb(value)">
+            </label>
         </div>
     </div>
 
     <div id="results">
-        <div class="print-result">
-            <p class="category">Tip Amount</p>
-            <p class="ratio">/ person</p>
-            <p class="value"></p>
+        <div id="text-holder">
+            <div class="print-result">
+                <div>
+                    <p class="category">Tip Amount</p>
+                    <p class="ratio">/ person</p>
+                </div>
+                <p class="value" id="tip">$0.00</p>
+            </div>
+            <div class="print-result">
+                <div>
+                    <p class="category">Total</p>
+                    <p class="ratio">/ person</p>
+                </div>
+                <p class="value" id="total">$0.00</p>
+            </div>
         </div>
-        <div class="print-result">
-            <p class="category">Total</p>
-            <p class="ratio">/ person</p>
-            <p class="value"></p>
+        <div id="btn-holder">
+            <label>
+                <input type="button" value="RESET" id="btn-reset" onclick="reset()">
+            </label>
         </div>
-        <label>
-            <input type="button" value="RESET">
-        </label>
     </div>
 </main>
 
+
+<script type="text/javascript" src="script.js"></script>
 </body>
 </html>

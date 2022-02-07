@@ -29,19 +29,21 @@ body main #user-input {
   max-width: 415px;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   position: relative;
   padding: 20px;
   box-sizing: border-box;
 }
-body main #user-input #bill, body main #user-input #percentage {
-  margin-bottom: 45px;
+body main #user-input label {
+  display: block;
+  position: relative;
 }
 body main #user-input #percentage-input {
   display: grid;
-  grid-template-columns: repeat(3, 116px);
-  grid-gap: 16px;
+  grid-template-columns: repeat(3, 115px);
+  grid-gap: 15px;
   grid-template-rows: repeat(2, 50px);
-  margin-top: 18px;
+  margin-top: 14px;
 }
 body main #user-input #percentage-input input {
   width: 100%;
@@ -54,8 +56,16 @@ body main #user-input #percentage-input input.btn-perc {
   font-weight: 700;
   font-family: "Space Mono", monospace;
   border: none;
-  cursor: pointer;
   color: white;
+}
+body main #user-input #percentage-input input.btn-perc:hover {
+  cursor: pointer;
+  background-color: #74ecd2;
+  color: #00494d;
+}
+body main #user-input #percentage-input input.btn-perc.active-perc {
+  background-color: #26c0ab;
+  color: #00494d;
 }
 body main #user-input .section-title {
   font-size: 16px;
@@ -65,7 +75,7 @@ body main #user-input .section-title {
 }
 body main #user-input .text-input {
   margin: 0;
-  padding: 0 18px 0 0;
+  padding: 0 14px 0 0;
   border: none;
   box-sizing: border-box;
   background-color: #f4fafa;
@@ -75,10 +85,70 @@ body main #user-input .text-input {
   font-weight: 700;
   font-family: "Space Mono", monospace;
   color: #5e7a7d;
+  cursor: pointer;
+}
+body main #user-input .text-input:focus-visible {
+  outline: #26c0ab auto 1px;
+}
+body main #user-input .text-input#btn-ctm {
+  padding-right: 0;
+}
+body main #user-input .text-input.newValue {
+  color: #00494d;
+}
+body main #user-input .text-input.newValue#btn-ctm {
+  border: #26c0ab solid 4px;
+}
+body main #user-input .text-input.newValue#btn-ctm::placeholder {
+  color: #00494d;
+}
+body main #user-input .text-input.wrongInput {
+  outline: #ff3c00 solid 2px;
+}
+body main #user-input .text-input.wrongInput::after {
+  display: block;
 }
 body main #user-input .text-input-value {
   width: 100%;
-  margin-top: 10px;
+  height: 45px;
+  margin-top: 7px;
+  -moz-appearance: textfield;
+  /* Chrome */
+}
+body main #user-input .text-input-value::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+body main #user-input #bill label::before {
+  z-index: 5;
+  display: block;
+  height: 17px;
+  width: 11px;
+  position: absolute;
+  left: 18px;
+  top: 45px;
+  content: url("../images/icon-dollar.svg");
+}
+body main #user-input #nb-of-people label::before {
+  z-index: 5;
+  display: block;
+  height: 16px;
+  width: 13px;
+  position: absolute;
+  left: 18px;
+  top: 45px;
+  content: url("../images/icon-person.svg");
+}
+body main #user-input #bill label.wrongInput::after,
+body main #user-input #nb-of-people label.wrongInput::after {
+  content: "Can't be zero !";
+  position: absolute;
+  font-size: 16px;
+  width: auto;
+  height: 20px;
+  top: 0;
+  right: 0;
+  color: #ff3c00;
 }
 body main #results {
   flex: 1;
@@ -86,6 +156,94 @@ body main #results {
   max-width: 415px;
   background-color: #00494d;
   border-radius: 20px;
+  box-sizing: border-box;
+  padding: 50px 35px 35px 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body main #results #text-holder {
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body main #results #text-holder .print-result {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  height: 42px;
+}
+body main #results #text-holder .print-result > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body main #results #text-holder .print-result p {
+  margin: 0;
+}
+body main #results #text-holder .print-result p.category {
+  color: white;
+  font-size: 16px;
+}
+body main #results #text-holder .print-result p.ratio {
+  color: #5e7a7d;
+}
+body main #results #text-holder .print-result p.value {
+  color: #26c0ab;
+  line-height: 42px;
+  font-size: 40px;
+}
+body main #results #btn-holder {
+  height: 50px;
+}
+body main #results #btn-holder #btn-reset {
+  height: 50px;
+  width: 100%;
+  border: none;
+  font-weight: 700;
+  font-size: 20px;
+  border-radius: 10px;
+  cursor: not-allowed;
+  background-color: #056267;
+  color: #00494d;
+}
+body main #results #btn-holder #btn-reset.reset-possible {
+  background-color: #26c0ab;
+}
+body main #results #btn-holder #btn-reset.reset-possible:hover {
+  cursor: pointer;
+  background-color: #74ecd2;
+  color: #00494d;
+}
+
+@media screen and (max-device-width: 490px) {
+  body img {
+    margin: auto;
+  }
+  body main {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 85%;
+    padding: 30px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    border-radius: 20px 20px 0 0;
+    box-shadow: none;
+  }
+  body main #user-input {
+    flex: 2;
+    padding: 0 8px 20px 8px;
+  }
+  body main #user-input #percentage-input {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 50px);
+  }
+  body main #results #text-holder {
+    height: 110px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
